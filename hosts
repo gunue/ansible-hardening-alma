@@ -1,0 +1,3 @@
+[all]
+
+alma_test ansible_ssh_host=IP

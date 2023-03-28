@@ -1,0 +1,9 @@
+---
+- name: Blacklist the nouveau driver module
+  community.general.kernel_blacklist: name={{ item }} state=present
+  with_items:
+    - ppdev
+    - pcspkr
+    - parport
+    - parport_pc
+    - floppy

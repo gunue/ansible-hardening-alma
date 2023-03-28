@@ -1,0 +1,9 @@
+---
+item_sshport: 22
+item_permitrootlogin: "no"
+item_maxauthtries: 6
+item_passwordauth: "no"
+item_x11forwarding: "no"
+item_x11uselocalhost: "no"
+item_clientaliveinterval: 900
+item_clientalivecountmax: 0

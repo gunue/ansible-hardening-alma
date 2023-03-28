@@ -1,0 +1,10 @@
+---
+- name: Replace login.defs with the compliant one
+  template:
+      src: "sshd_config.j2"
+      dest: "/etc/ssh/sshd_config"
+      owner: root
+      group: root
+      mode: "600"
+  tags:
+    - sshdconfig

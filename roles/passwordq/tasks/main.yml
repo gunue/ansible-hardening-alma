@@ -1,0 +1,10 @@
+---
+- name: Replace pwquality.conf with the compliant one
+  template:
+      src: "pwquality.conf.j2"
+      dest: "/etc/security/pwquality.conf"
+      owner: root
+      group: root
+      mode: "0644"
+  tags:
+    - passwordquality

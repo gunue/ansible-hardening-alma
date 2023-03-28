@@ -1,0 +1,26 @@
+---
+- name: Install required AlmaLinux package
+  yum: name={{ item }} state=present
+  with_items:
+    - policycoreutils-python-utils
+
+- name: Install needed network manager libs
+  ansible.builtin.package:
+    name:
+      - NetworkManager-libnm
+      - nm-connection-editor
+        #- libsemanage-python # Installed by policycoreutils-python-utils
+        #- policycoreutils-python # Installed by policycoreutils-python-utils
+    state: present
+
+- name: Disabling IPv6
+  community.general.nmcli:
+    conn_name: "{{ conn_name }}"
+    type: ethernet
+    method6: "{{ item_method6 }}"
+    gw6_ignore_auto: yes
+    state: present
+    dns4:
+      - 94.103.32.130
+      - 94.103.33.130
+  notify: Restart NetworkManager     

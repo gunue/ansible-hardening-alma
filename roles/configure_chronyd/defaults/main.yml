@@ -1,0 +1,13 @@
+---
+chrony_commands:
+  driftfile: /var/lib/chrony/drift
+  logdir: /var/log/chrony
+  makestep: '1.0 3'
+  keyfile: /etc/chrony.key
+  leapsectz: right/UTC
+  rtcsync: true
+  server:
+    - ntp1.veriteknik.com iburst
+    - ntp2.veriteknik.com iburst
+chrony_sysconfig: ''
+...

@@ -1,0 +1,11 @@
+---
+- name: Install packages to AlmaLinux nodes
+  hosts: all
+  remote_user: root
+  roles:
+    # - roles/passwordq
+    # - roles/disable_ipv6
+    #- roles/blacklist_kernel_module
+    #- roles/timeoutsh
+    #- roles/logindefs
+    - roles/sshdconf
